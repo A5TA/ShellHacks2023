@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import ErrorPage from './components/ErrorPage.tsx'
+import {TransactionProvider} from './context/TranscationContext.tsx'
 import './index.css'
 
 const routes: string[] = ["Home", "Individuals", "Charities", "AboutUs"]
@@ -39,7 +40,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
+  <TransactionProvider>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </TransactionProvider>,
 )
