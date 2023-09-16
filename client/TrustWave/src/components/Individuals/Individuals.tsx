@@ -21,7 +21,7 @@ const Individuals = () => {
         userAddress={selectedUser}
       />}
       
-      <div className="mb-10"><Individual handleConnectWallet={handleConnectWallet} address={"0x926C3ee93bb42F6853A44FC6b38f504EEd194b7d"}/></div>
+      <div className="mb-10"><Individual handleConnectWallet={handleConnectWallet} address={"0xd7Da7f0d221Fa3Dc73b335F311bb598AAE1779a4"}/></div>
   
     </div>
   )
