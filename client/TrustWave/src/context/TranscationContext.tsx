@@ -3,7 +3,6 @@ import { ethers } from "ethers"
 import { contractAddress, contractABI } from "../utils/constants"
 
 interface FormData {
-    // Define the shape of your form data
     addressTo: string;
     amount: string;
     keyword: string;
@@ -79,7 +78,9 @@ export const TransactionProvider: React.FC<TransactionProviderProps> = ({childre
     const sendTransaction = async () => {
         try {
             if (!ethereum) return alert("Metamask missing please install Metamask ")
-            console.log("Just sent", formData)
+            
+            console.log(formData)
+            getEthereumContract()
             
         } catch (error) {
             console.log(error)

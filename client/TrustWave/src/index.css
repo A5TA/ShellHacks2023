@@ -81,6 +81,12 @@ body {
   border-radius: 5px;
   margin-bottom: 10px;
 }
+@media (max-width: 767px) {
+  .spline-container {
+    display: none; /* Hide the element on mobile devices */
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
