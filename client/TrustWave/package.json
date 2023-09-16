@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ethers": "^6.7.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.9",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.451",
+    "ethers": "^6.7.1",
     "react": "^18.2.0",
     "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",

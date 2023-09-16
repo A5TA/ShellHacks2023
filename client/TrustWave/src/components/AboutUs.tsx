@@ -75,14 +75,14 @@ useEffect(() => {
       <div className="flex flex-col items-center space-y-4">
       <div className="flex flex-col items-center">
       <p className="header text-3xl sm:text-5xl text-white py-1">
-        <CountUp start={0} end={100000} duration={100000} delay={0}/>+
+        <CountUp start={0} end={100000} duration={100009} delay={0}/>+
       </p>
       <span className="text-white mt-2">individual donations</span>
     </div>
     
     <div className="flex flex-col items-center">
       <p className="header text-3xl sm:text-5xl text-white py-1">
-        $<CountUp start={100} end={100000000} duration={10000000} delay={0}/>+
+        $<CountUp start={100} end={100000000} duration={100000000} delay={0}/>+
       </p>
       <span className="text-white mt-2">raised by our community</span>
     </div>
