@@ -8,8 +8,8 @@ import {AiOutlineInstagram} from 'react-icons/ai';
 const Footer = () => {
   return (
     
-    <footer className="flex flex-grow text-white mt-8 py-10" style={{backgroundColor: 'rgba(11, 8, 59, 0.05)'}}>
-      <div className="container mx-auto flex justify-between items-center">
+    <footer className="flex flex-grow text-white mt-8 py-20" style={{backgroundColor: 'rgba(11, 8, 59, 0.05)'}}>
+      <div className="container mx-auto flex justify-between items-center w-full">
         <div>
           <h2 className="text-2xl font-bold">TrustWave</h2>
           <p className="text-sm">Empowering Change through Crypto</p>
