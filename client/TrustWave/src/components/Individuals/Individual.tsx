@@ -8,10 +8,11 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
 import{RiArrowDropDownLine} from 'react-icons/ri';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Person from '../../assets/TomBegging.png'
+import { TransactionContext } from '../../context/TranscationContext';
+
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -29,6 +30,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function RecipeReviewCard() {
+  const {connectWallet, currentAccount} = useContext(TransactionContext)
   const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
@@ -57,6 +59,8 @@ export default function RecipeReviewCard() {
         Please contribute today to make a significant difference in Tom' well-being and our family's peace of mind.
         </Typography>
       </CardContent>
+        <div style={{marginLeft: 'auto'}}>
+        <ExpandMore
       <CardActions disableSpacing style={{display: 'flex', justifyContent: 'space-between'}}>
       <div>
       <ExpandMore
@@ -69,12 +73,16 @@ export default function RecipeReviewCard() {
         </ExpandMore>
       </div>  
       <div>
-        <IconButton aria-label="share">
-            Share
-        </IconButton>
-        <IconButton aria-label="add to favorites">
-            ***
-        </IconButton>
+        <CardActions disableSpacing>
+        {currentAccount ? 
+      <button aria-label="share" onClick={() => console.log("sent money")}>
+          Send Donation
+      </button>
+      :
+      <button aria-label="share" onClick={connectWallet}>
+            Connect Wallet
+        </button>
+      }
       </div>
       
       </CardActions>
