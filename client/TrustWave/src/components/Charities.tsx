@@ -1,6 +1,6 @@
 
-import RedCross from '/src/assets/RedCross.jpeg';
-import Unicef from '../assets/unicef.png'; 
+import RedCross from '../assets/RedCross.jpeg';
+import Unicef from '../assets/Unicef.png'; 
 import SalvationArmy from '../assets/Salvation.png';
 import Habitat from '../assets/Habitat.png';
 import worldfood from '../assets/WorldFood.png';

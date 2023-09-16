@@ -157,15 +157,15 @@ const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address })
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            Add rice and stir very gently to distribute. Top with artichokes and
-            peppers, and cook without stirring, until most of the liquid is absorbed,
-            15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
-            mussels, tucking them down into the rice, and cook again without
-            stirring, until mussels have opened and rice is just tender, 5 to 7
-            minutes more. (Discard any mussels that don&apos;t open.)
-          </Typography>
+        <Typography paragraph>
+          John Doe Sent 0.0243-ETH
+        </Typography>
+        <Typography paragraph>
+          Riley Erickson Sent 1.24-ETH
+        </Typography>
+        <Typography paragraph>
+          Bob Samson Sent 0.23-ETH
+        </Typography>
         </CardContent>
       </Collapse>
     </Card>
