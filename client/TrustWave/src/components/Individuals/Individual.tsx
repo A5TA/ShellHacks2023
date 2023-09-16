@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import{RiArrowDropDownLine} from 'react-icons/ri';
 import { useState } from 'react';
-import Person from '../assets/TomBegging.png'
+import Person from '../../assets/TomBegging.png'
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
