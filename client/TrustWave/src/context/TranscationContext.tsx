@@ -53,6 +53,16 @@ export const TransactionProvider = ({children}: any) => {
         }
     }
 
+    const sendTransaction = async () => {
+        try {
+            if (!ethereum) return alert("Metamask missing please install Metamask ")
+
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         checkWalletConnection()
     },[])
