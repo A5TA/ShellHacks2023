@@ -13,6 +13,7 @@ import { useState, useContext } from 'react';
 import Person from '../../assets/TomBegging.png'
 import { TransactionContext } from '../../context/TranscationContext';
 import {BiDotsHorizontalRounded} from 'react-icons/bi'
+import Modal from './Modal';
 
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -51,7 +52,16 @@ const TextShortener: React.FC<{ text: string; maxWords: number }> = ({ text, max
   );
 };
 
-export default function RecipeReviewCard() {
+interface IndividualProps {
+  handleConnectWallet: () => void;
+}
+
+const Individual: React.FC<IndividualProps> = ({ handleConnectWallet }) => {
+  // Use handleConnectWallet when needed
+  const handleClick = () => {
+    // Call the handleConnectWallet function
+    handleConnectWallet();
+  };
   const {connectWallet, currentAccount} = useContext(TransactionContext)
   const [expanded, setExpanded] = useState(false);
   const userDescription = ` We're urgently seeking your help to fund a life-saving surgery for our cherished cat, Tom. 
@@ -62,6 +72,21 @@ export default function RecipeReviewCard() {
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+
+  const handleConnect = async () => {
+    if (connectWallet) {
+      // Assuming connectWallet returns a Promise
+      try {
+        await connectWallet();
+        // Now that connectWallet has completed successfully, you can call handleConnectWallet
+        handleConnectWallet();
+      } catch (error) {
+        // Handle any errors that occur during connectWallet
+        console.error('Error connecting wallet:', error);
+      }
+    }
   };
 
   return (
@@ -114,13 +139,13 @@ export default function RecipeReviewCard() {
         </div> 
       <div>
         {currentAccount ? 
-      <button aria-label="share" onClick={() => console.log("sent money")} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      <button aria-label="share" onClick={() => handleClick()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
           Send Donation
       </button>
       :
-      <button aria-label="share" onClick={connectWallet}>
+      <button aria-label="share" onClick={() => handleConnect()}>
             Connect Wallet
-        </button>
+      </button>
       }
       </div>
       </CardActions>
@@ -140,3 +165,5 @@ export default function RecipeReviewCard() {
     </Card>
   );
 }
+
+export default Individual
