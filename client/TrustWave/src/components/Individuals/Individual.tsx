@@ -117,7 +117,7 @@ const Individual: React.FC<IndividualProps> = ({ handleConnectWallet }) => {
       </div>
    
       <CardContent>
-        <Typography variant="body2" className='text-white'>
+        <Typography component={'span'} className='text-white'>
           <TextShortener text={userDescription} maxWords={35} />
         </Typography>
       </CardContent>

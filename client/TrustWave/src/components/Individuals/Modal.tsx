@@ -18,6 +18,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   };
   const {formData, setFormData, handleChange, sendTransaction} = useContext(TransactionContext)
 
+
   return (
     <div className={`modal ${isOpen ? 'open' : ''} flex flex-col`}>
   <div className="modal-content">
@@ -43,7 +44,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         name="keyword"
         type="text"
         value={formData.keyword}
-        onChange={(e) => handleChange(e, "amount")}
+        onChange={(e) => handleChange(e, "keyword")}
         className="blue-input" 
       />
       <input
@@ -51,7 +52,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
         name="message"
         type="text"
         value={formData.message}
-        onChange={(e) => handleChange(e, "amount")}
+        onChange={(e) => handleChange(e, "message")}
         className="blue-input" 
       />
       <div className="button-container">
