@@ -1,36 +1,22 @@
-import React, { useState } from 'react';
-
-interface FormData {
-  addressTo: string;
-  amount: string;
-  keyword: string;
-  message: string;
-}
+import React, { useContext, useState } from 'react';
+import { TransactionContext } from '../../context/TranscationContext';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  handleSubmit: (formData: FormData) => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, handleSubmit }) => {
-  const [formData, setFormData] = useState<FormData>({
-    addressTo: '',
-    amount: '',
-    keyword: '',
-    message: '',
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    handleSubmit(formData);
+    const { amount, keyword, message } = formData;
+    if (!amount || !keyword || !message) return alert("The Form was not submitted due to missing fields");
+
+    sendTransaction()
+    setFormData({addressTo: "", amount: "", keyword: "", message: ""})
     onClose();
   };
+  const {formData, setFormData, handleChange, sendTransaction} = useContext(TransactionContext)
 
   return (
     <div className={`modal ${isOpen ? 'open' : ''}`}>
@@ -41,29 +27,28 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, handleSubmit }) => {
             placeholder="Address To"
             name="addressTo"
             type="text"
-            value={formData.addressTo}
-            onChange={handleInputChange}
+            value={123123312}
           />
           <input
             placeholder="Amount (ETH)"
             name="amount"
             type="number"
             value={formData.amount}
-            onChange={handleInputChange}
+            onChange={(e) => handleChange(e, "amount")}
           />
           <input
-            placeholder="Keyword (Gif)"
+            placeholder="Keywords"
             name="keyword"
             type="text"
             value={formData.keyword}
-            onChange={handleInputChange}
+            onChange={(e) => handleChange(e, "keyword")}
           />
           <input
             placeholder="Enter Message"
             name="message"
             type="text"
             value={formData.message}
-            onChange={handleInputChange}
+            onChange={(e) => handleChange(e, "message")}
           />
           <button type="submit">Submit</button>
         </form>

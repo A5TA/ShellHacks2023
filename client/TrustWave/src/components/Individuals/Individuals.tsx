@@ -17,7 +17,6 @@ const Individuals = () => {
       {isModalOpen && <Modal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
-        handleSubmit={() => console.log("submit")}
       />}
       
   {/* <div className="md:ml-20"> */}
