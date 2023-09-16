@@ -19,17 +19,16 @@ const Individuals = () => {
         onClose={handleCloseModal}
         handleSubmit={() => console.log("submit")}
       />}
-      
-  {/* <div className="md:ml-20"> */}
-    <div className="mb-10"><Individual handleConnectWallet={handleConnectWallet} /></div>
-    {/* <div className="mb-10"><Individual /></div> */}
-    {/* <div className="mb-10"><Individual /></div>
-  </div>
-  <div className="md:mr-20">
-    <div className="mb-10"><Individual /></div>
-    <div className="mb-10"><Individual /></div>
-    <div className="mb-10"><Individual /></div>
-  </div> */}
+      <div className="md:ml-20">
+        <div className="mb-10"><Individual handleConnectWallet={handleConnectWallet} /></div>
+        <div className="mb-10"><Individual handleConnectWallet={handleConnectWallet} /></div>
+        <div className="mb-10"><Individual handleConnectWallet={handleConnectWallet} /></div>
+      </div>
+      <div className="md:mr-20">
+        <div className="mb-10"><Individual handleConnectWallet={handleConnectWallet} /></div>
+        <div className="mb-10"><Individual handleConnectWallet={handleConnectWallet} /></div>
+        <div className="mb-10"><Individual handleConnectWallet={handleConnectWallet} /></div>
+      </div>
 </div>
   )
 }

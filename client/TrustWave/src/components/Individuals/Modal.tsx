@@ -33,43 +33,49 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, handleSubmit }) => {
   };
 
   return (
-    <div className={`modal ${isOpen ? 'open' : ''}`}>
-      <div className="modal-content">
-        <h2>Crypto Information</h2>
-        <form onSubmit={handleFormSubmit}>
-          <input
-            placeholder="Address To"
-            name="addressTo"
-            type="text"
-            value={formData.addressTo}
-            onChange={handleInputChange}
-          />
-          <input
-            placeholder="Amount (ETH)"
-            name="amount"
-            type="number"
-            value={formData.amount}
-            onChange={handleInputChange}
-          />
-          <input
-            placeholder="Keyword (Gif)"
-            name="keyword"
-            type="text"
-            value={formData.keyword}
-            onChange={handleInputChange}
-          />
-          <input
-            placeholder="Enter Message"
-            name="message"
-            type="text"
-            value={formData.message}
-            onChange={handleInputChange}
-          />
-          <button type="submit">Submit</button>
-        </form>
-        <button onClick={onClose}>Close</button>
+    <div className={`modal ${isOpen ? 'open' : ''} flex flex-col`}>
+  <div className="modal-content">
+    <h2>Crypto Information</h2>
+    <form onSubmit={handleFormSubmit}>
+      <input
+        placeholder="Address To"
+        name="addressTo"
+        type="text"
+        value={formData.addressTo}
+        onChange={handleInputChange}
+        className="blue-input" 
+      />
+      <input
+        placeholder="Amount (ETH)"
+        name="amount"
+        type="number"
+        value={formData.amount}
+        onChange={handleInputChange}
+        className="blue-input" 
+      />
+      <input
+        placeholder="Keyword (Gif)"
+        name="keyword"
+        type="text"
+        value={formData.keyword}
+        onChange={handleInputChange}
+        className="blue-input" 
+      />
+      <input
+        placeholder="Enter Message"
+        name="message"
+        type="text"
+        value={formData.message}
+        onChange={handleInputChange}
+        className="blue-input" 
+      />
+      <div className="button-container">
+        <button className="close-button" onClick={onClose}>Close</button>
+        <button className="submit-button" type="submit">Submit</button>
       </div>
-    </div>
+    </form>
+  </div>
+</div>
   );
 };
 
