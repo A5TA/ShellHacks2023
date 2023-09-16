@@ -1,12 +1,14 @@
 import { AiFillPlayCircle } from "react-icons/ai"
 import { Link } from "react-router-dom"
+import Spline from '@splinetool/react-spline';
 
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center border-blue-500 items-center border-[0.5px] text-sm font-medium text-white bg-gradient-to-r"
 
 const HomePage = () => {
   
   return (
-
+    
+    
     <div className="flex w-full justify-center items-center">
       <div className="flex mf:flex-row flex-col py-12 px-4 items-start md:p-20 justify-between">
         <div className="flex flex-1 justify-start mf:mr-10 items-start flex-col">
@@ -19,7 +21,7 @@ const HomePage = () => {
           
             <button
               type="button"
-              className="flex flex-row justify-center items-center my-5 bg-[#0a4cad] p-3 rounded-full cursor-pointer hover:bg-[#000AFF]"
+              className="flex flex-row justify-center items-center my-5 bg-[#0a4cad] p-4 rounded-full cursor-pointer hover:bg-[#000AFF]"
             >
               <AiFillPlayCircle className="text-white mr-2" />
               <Link to="/Individuals" className="text-white text-base font-semibold">
@@ -27,7 +29,7 @@ const HomePage = () => {
               </Link>
             </button>
 
-          <div className="grid sm:grid-cols-3 mt-10 grid-cols-2 w-full gap-2">
+          <div className="grid sm:grid-cols-3 mt-10 grid-cols-2 w-full gap-">
             <div className={`rounded-tl-2xl ${companyCommonStyles}`}>
               Non-Profit
             </div>
@@ -46,7 +48,11 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+
       </div>
+      <div className="flex-1">
+      <Spline scene="https://prod.spline.design/N5C94L9OXt1ZEiIP/scene.splinecode" />
+        </div>
     </div>
   )
 }
