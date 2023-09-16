@@ -48,12 +48,38 @@ body {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: rgba(61, 54, 161, 0.8);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   max-width: 400px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.close-button {
+  flex: 1;
+  margin-right: 5px;
+}
+
+.submit-button {
+  flex: 1;
+  margin-left: 5px;
+}
+.blue-input {
+  border: 1px solid rgb(45, 45, 169);
+  background-color: rgb(57, 57, 198); /* Blue background color */
+  color: rgb(251, 251, 251); /* White text color */
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 @tailwind base;
 @tailwind components;
