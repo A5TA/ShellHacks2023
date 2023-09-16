@@ -29,7 +29,12 @@ const getEthereumContract = async () => {
     })
 }
 
-export const TransactionProvider: React.FC = ({children}: any) => {
+interface TransactionProviderProps {
+    children: React.ReactNode;
+  }
+  
+
+export const TransactionProvider: React.FC<TransactionProviderProps> = ({children}: any) => {
     const [currentAccount, setCurrentAccount] = useState<string | undefined>(undefined)
     const [formData, setFormData] = useState({addressTo: "", amount: "", keyword: "", message: ""})
 
