@@ -7,14 +7,14 @@ type currentRouteType = {
 
 const App = ({page}: currentRouteType) => {
   return (
-    <>
+    <div className="gradient-bg">
       <Navbar />
       {page == "Home" && <HomePage />}
       {page == "Individuals" && <Individuals />}
       {page == "Charities" && <Charities />}
       {page == "AboutUs" && <AboutUs />}
       <Footer />
-    </>
+    </div>
   )
 }
 
