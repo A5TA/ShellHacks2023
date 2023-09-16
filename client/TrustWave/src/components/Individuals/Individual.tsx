@@ -59,10 +59,8 @@ export default function RecipeReviewCard() {
         Please contribute today to make a significant difference in Tom' well-being and our family's peace of mind.
         </Typography>
       </CardContent>
-        <div style={{marginLeft: 'auto'}}>
-        <ExpandMore
       <CardActions disableSpacing style={{display: 'flex', justifyContent: 'space-between'}}>
-      <div>
+        <div>
       <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -71,9 +69,8 @@ export default function RecipeReviewCard() {
         >
           <RiArrowDropDownLine/>
         </ExpandMore>
-      </div>  
+        </div> 
       <div>
-        <CardActions disableSpacing>
         {currentAccount ? 
       <button aria-label="share" onClick={() => console.log("sent money")}>
           Send Donation
@@ -84,7 +81,6 @@ export default function RecipeReviewCard() {
         </button>
       }
       </div>
-      
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
