@@ -1,17 +1,18 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { TransactionContext } from '../../context/TranscationContext';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
+  userAddress: string | undefined;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, userAddress }) => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const { amount, keyword, message } = formData;
+    // if (!userAddress) return alert("Missing user address")
     if (!amount || !keyword || !message) return alert("The Form was not submitted due to missing fields");
-
     sendTransaction()
     setFormData({addressTo: "", amount: "", keyword: "", message: ""})
     onClose();
@@ -25,11 +26,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
     <h2>Crypto Information</h2>
     <form onSubmit={handleFormSubmit}>
       <input
-        placeholder="Address To"
+        value={userAddress}
         name="addressTo"
         type="text"
-        value={123123312}
         className="blue-input" 
+        readOnly
       />
       <input
         placeholder="Amount (ETH)"

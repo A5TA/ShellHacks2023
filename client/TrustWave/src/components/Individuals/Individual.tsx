@@ -49,14 +49,20 @@ const TextShortener: React.FC<{ text: string; maxWords: number }> = ({ text, max
 };
 
 interface IndividualProps {
-  handleConnectWallet: () => void;
+  handleConnectWallet: any;
+  address: string;
 }
 
-const Individual: React.FC<IndividualProps> = ({ handleConnectWallet }) => {
+const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address }) => {
+  const {setFormData} = useContext(TransactionContext)
   // Use handleConnectWallet when needed
   const handleClick = () => {
     // Call the handleConnectWallet function
-    handleConnectWallet();
+    setFormData((prevState: any) => ({
+      ...prevState,
+      addressTo: address,
+    }))
+    handleConnectWallet(address);
   };
   const {connectWallet, currentAccount} = useContext(TransactionContext)
   const [expanded, setExpanded] = useState(false);
@@ -77,7 +83,11 @@ const Individual: React.FC<IndividualProps> = ({ handleConnectWallet }) => {
       try {
         await connectWallet();
         // Now that connectWallet has completed successfully, you can call handleConnectWallet
-        handleConnectWallet();
+        setFormData((prevState: any) => ({
+          ...prevState,
+          addressTo: address,
+        }))
+        handleConnectWallet(address);
       } catch (error) {
         // Handle any errors that occur during connectWallet
         console.error('Error connecting wallet:', error);
