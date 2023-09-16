@@ -56,7 +56,7 @@ useEffect(() => {
 
     <section className="text-center mb-12">
       <p className="text-3xl sm:text-5xl py-1">
-        A global community of 100M+ people helping one another
+        A global community of people helping one another
       </p>
     </section>
 
@@ -82,7 +82,7 @@ useEffect(() => {
     
     <div className="flex flex-col items-center">
       <p className="header text-3xl sm:text-5xl text-white py-1">
-        $<CountUp start={100} end={100000000} duration={100000000} delay={0}/>+
+        $<CountUp start={100} end={100000000} duration={1000000} delay={0}/>+
       </p>
       <span className="text-white mt-2">raised by our community</span>
     </div>
