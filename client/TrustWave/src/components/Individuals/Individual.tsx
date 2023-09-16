@@ -156,10 +156,15 @@ const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address, m
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>Method:</Typography>
-          <Typography paragraph>
-            {description}
-          </Typography>
+        <Typography paragraph>
+          John Doe Sent 0.0243-ETH
+        </Typography>
+        <Typography paragraph>
+          Riley Erickson Sent 1.24-ETH
+        </Typography>
+        <Typography paragraph>
+          Bob Samson Sent 0.23-ETH
+        </Typography>
         </CardContent>
       </Collapse>
     </Card>
