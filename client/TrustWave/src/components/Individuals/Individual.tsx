@@ -51,9 +51,13 @@ const TextShortener: React.FC<{ text: string; maxWords: number }> = ({ text, max
 interface IndividualProps {
   handleConnectWallet: any;
   address: string;
+  message: string;
+  description: string;
+  homeAddress: string;
+  name: string;
 }
 
-const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address }) => {
+const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address, message, description, homeAddress, name }) => {
   const {setFormData} = useContext(TransactionContext)
   // Use handleConnectWallet when needed
   const handleClick = () => {
@@ -66,11 +70,6 @@ const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address })
   };
   const {connectWallet, currentAccount} = useContext(TransactionContext)
   const [expanded, setExpanded] = useState(false);
-  const userDescription = ` We're urgently seeking your help to fund a life-saving surgery for our cherished cat, Tom. 
-  Tom is facing a critical medical condition, and without this surgery, his future hangs in the balance. 
-  Your generous donations will make it possible for Tom to receive the surgery he needs, ensuring a chance at a healthy and happy life. 
-  Please contribute today to make a significant difference in Tom' well-being and our family's peace of mind.`
-
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -115,8 +114,8 @@ const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address })
           </div>
           <div className="flex flex-row space-x-20 items-center">
             <div className="text-white whitespace-nowrap">
-              <h2 className="text-xl font-bold">Tom the Cat</h2>
-              <p>Springfield, MO</p>
+              <h2 className="text-xl font-bold">{name}</h2>
+              <p>{homeAddress}</p>
             </div>
             <div className="text-white absolute top-0 right-0 p-3">
               <IconButton aria-label="settings" className="text-white">
@@ -128,7 +127,7 @@ const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address })
    
       <CardContent>
         <Typography component={'span'} className='text-white'>
-          <TextShortener text={userDescription} maxWords={35} />
+          <TextShortener text={message} maxWords={35} />
         </Typography>
       </CardContent>
       <CardActions disableSpacing style={{display: 'flex', justifyContent: 'space-between'}}>
