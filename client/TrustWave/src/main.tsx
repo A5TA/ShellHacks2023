@@ -8,12 +8,27 @@ import {
 import ErrorPage from './components/ErrorPage.tsx'
 import './index.css'
 
-// const routes: string[] = ["Home", "Individuals", "Charities", "AboutUs"]
+const routes: string[] = ["Home", "Individuals", "Charities", "AboutUs"]
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <App page={routes[0]}/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/individuals",
+    element: <App page={routes[1]}/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/charities",
+    element: <App page={routes[2]}/>,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/aboutus",
+    element: <App page={routes[3]}/>,
     errorElement: <ErrorPage />,
   },
 ]);

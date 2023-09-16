@@ -1,8 +1,20 @@
-const App = () => {
+import { Charities, HomePage, Individuals, AboutUs } from "./components"
+import { Navbar, Footer } from "./components/shared"
+
+type currentRouteType = {
+  page: string,
+}
+
+const App = ({page}: currentRouteType) => {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <>
+      <Navbar />
+      {page == "Home" && <HomePage />}
+      {page == "Individuals" && <Individuals />}
+      {page == "Charities" && <Charities />}
+      {page == "AboutUs" && <AboutUs />}
+      <Footer />
+    </>
   )
 }
 
