@@ -7,7 +7,6 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import{RiArrowDropDownLine} from 'react-icons/ri';
 import { useState, useContext } from 'react';
-import Person from '../../assets/TomBegging.png'
 import { TransactionContext } from '../../context/TranscationContext';
 import {BiDotsHorizontalRounded} from 'react-icons/bi'
 
@@ -59,7 +58,7 @@ interface IndividualProps {
   image: string;
 }
 
-const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address, message, description, homeAddress, name, image }) => {
+const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address, message, homeAddress, name, image }) => {
   const {setFormData} = useContext(TransactionContext)
   // Use handleConnectWallet when needed
   const handleClick = () => {

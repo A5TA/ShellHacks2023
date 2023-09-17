@@ -27,7 +27,7 @@ const Individuals = () => {
       <div className="flex flex-col items-center justify-center sm:grid grid-flow-row gap-10 sm:grid-cols-1 md:grid-cols-2 py-20">
         {userDataDemo.map((user, index) => (
         
-          <Individual
+          <Individual key={index}
             handleConnectWallet={handleConnectWallet}
             address={user.address}
             message={user.message}
