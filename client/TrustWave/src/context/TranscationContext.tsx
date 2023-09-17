@@ -33,8 +33,8 @@ interface TransactionProviderProps {
 export const TransactionProvider: React.FC<TransactionProviderProps> = ({children}: any) => {
     const [currentAccount, setCurrentAccount] = useState<string | undefined>(undefined)
     const [formData, setFormData] = useState({addressTo: "", amount: "", keyword: "", message: ""})
-    const [isLoading, setIsLoading] = useState<boolean>(false)
-    const [transactionCount, setTransactionCount] = useState(localStorage.getItem("transactionCount"))
+    const [, setIsLoading] = useState<boolean>(false)
+    const [, setTransactionCount] = useState(localStorage.getItem("transactionCount"))
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement>,
