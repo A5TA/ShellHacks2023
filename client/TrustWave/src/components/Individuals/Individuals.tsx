@@ -18,14 +18,15 @@ const Individuals = () => {
     setIsModalOpen(false)
   };
   return (
-    <div className="flex flex-col items-center sm:grid grid-flow-row gap-10 sm:grid-cols-1 md:grid-cols-2 py-20">
+    <div className="flex flex-col items-center justify-center ">
       {isModalOpen && <Modal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         userAddress={selectedUser}
       />}
-      {userDataDemo.map((user, index) => (
-        <div className="mb-10" key={index}>
+      <div className="flex flex-col items-center justify-center sm:grid grid-flow-row gap-10 sm:grid-cols-1 md:grid-cols-2 py-20">
+        {userDataDemo.map((user, index) => (
+        
           <Individual
             handleConnectWallet={handleConnectWallet}
             address={user.address}
@@ -35,9 +36,9 @@ const Individuals = () => {
             name={user.name}
             image={user.url}
           />
-          
-        </div>
       ))}
+      </div>
+      
   
     </div>
   )
