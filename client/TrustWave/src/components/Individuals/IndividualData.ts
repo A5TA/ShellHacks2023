@@ -18,7 +18,7 @@ export interface UserData {
       name: "Tom the Cat",
       homeAddress: "Springfield, MO",
       description: "",
-      address: "0xF1c391574E2631e804009FC617c6c2Fbc26b5735",
+      address: "0xc338e98Aa994Bd449929725B24a846DD24fA767F",
     },
     {
       id: 2,
