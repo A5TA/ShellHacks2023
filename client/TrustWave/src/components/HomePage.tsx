@@ -2,6 +2,7 @@ import { AiFillPlayCircle } from "react-icons/ai"
 import { Link } from "react-router-dom"
 import Spline from '@splinetool/react-spline';
 import Individual from "./Individuals/Individual";
+import  { userDataDemo } from "./Individuals/IndividualData"
 
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center border-blue-500 items-center border-[0.5px] text-sm font-medium text-white bg-gradient-to-r"
 const HomePage = () => {
@@ -18,10 +19,10 @@ const HomePage = () => {
 
           <button
             type="button"
-            className="flex flex-row justify-center items-center my-5 bg-[#0a4cad] p-4 rounded-full cursor-pointer hover:bg-[#000AFF]"
+            className="flex flex-row justify-center items-center my-5 bg-[#0a4cad] p-4 rounded-full cursor-pointer hover:bg-[#000AFF] max-w-xs"
           >
             <AiFillPlayCircle className="text-white mr-2" />
-            <Link to="/Individuals" className="text-white text-base font-semibold">
+            <Link to="/Individuals" className="text-white text-base font-semibold ">
               Get Started
             </Link>
           </button>
@@ -60,9 +61,30 @@ const HomePage = () => {
            Most Popular Individuals
           </h2>
       <div className="grid grid-cols-3 gap-4"> {/* Added grid container */}
-        <div><Individual handleConnectWallet={() => { throw new Error("Function not implemented."); }} address={"1"} /></div> {/* Grid item 1 */}
-        <div><Individual handleConnectWallet={() => { throw new Error("Function not implemented."); }} address={"2"} /></div> {/* Grid item 2 */}
-        <div><Individual handleConnectWallet={() => { throw new Error("Function not implemented."); }} address={"3"} /></div> {/* Grid item 3 */}
+        <div><Individual
+            handleConnectWallet={undefined}
+            address={userDataDemo[0].address}
+            message={userDataDemo[0].message}
+            description={userDataDemo[0].description}
+            homeAddress={userDataDemo[0].homeAddress}
+            name={userDataDemo[0].name}
+          /></div> 
+       <div><Individual
+            handleConnectWallet={undefined}
+            address={userDataDemo[1].address}
+            message={userDataDemo[1].message}
+            description={userDataDemo[1].description}
+            homeAddress={userDataDemo[1].homeAddress}
+            name={userDataDemo[1].name}
+          /></div> 
+          <div><Individual
+            handleConnectWallet={undefined}
+            address={userDataDemo[2].address}
+            message={userDataDemo[2].message}
+            description={userDataDemo[2].description}
+            homeAddress={userDataDemo[2].homeAddress}
+            name={userDataDemo[2].name}
+          /></div> 
       </div>
     </div>
   </div>

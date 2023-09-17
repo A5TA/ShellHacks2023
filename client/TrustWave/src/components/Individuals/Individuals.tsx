@@ -1,11 +1,14 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Individual from "./Individual"
 import Modal from "./Modal"
-import userDataDemo from "./IndividualData.ts"
+import { userDataDemo } from "./IndividualData"
+
 
 const Individuals = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [selectedUser, setSelectedUser] = useState<string | undefined>(undefined)
+  console.log(userDataDemo)
+  console.log(userDataDemo[0].name)
   const handleConnectWallet = (address: string) => {
     setSelectedUser(address)
     setIsModalOpen(true)
@@ -21,11 +24,6 @@ const Individuals = () => {
         onClose={handleCloseModal}
         userAddress={selectedUser}
       />}
-      {/*   id: 1,
-      url: "https://i.imgflip.com/3kavyw.png?a470520",
-      message: "",
-      address: "Springfield, MO",
-      summary: "", */}
       {userDataDemo.map((user, index) => (
         <div className="mb-10" key={index}>
           <Individual
@@ -36,6 +34,7 @@ const Individuals = () => {
             homeAddress={user.homeAddress}
             name={user.name}
           />
+          
         </div>
       ))}
   
