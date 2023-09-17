@@ -42,7 +42,7 @@ export interface UserData {
         id: 4,
         url: "https://cdn.downtoearth.org.in/library/large/2016-11-24/0.82556400_1479993701_rural-poor.jpg",
         message: "Jeffrey and his family, living in a remote rural area, are facing significant financial difficulties. They're struggling to make ends meet, provide basic necessities, and ensure a stable future for their children. Your compassionate contributions will go a long way in easing their burden, offering hope, and ensuring Jeffrey's family can thrive despite the challenges of rural life. Please donate today to make a positive impact on their lives and provide them with the support they desperately need.",
-        name: "Tom the Cat",
+        name: "Jeffrey ShellHacks",
         homeAddress: "San Diego, CA",
         description: "",
         address: "0xd7Da7f0d221Fa3Dc73b335F311bb598AAE1779a4"
