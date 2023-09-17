@@ -56,9 +56,10 @@ interface IndividualProps {
   description: string;
   homeAddress: string;
   name: string;
+  image: string;
 }
 
-const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address, message, description, homeAddress, name }) => {
+const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address, message, description, homeAddress, name, image }) => {
   const {setFormData} = useContext(TransactionContext)
   // Use handleConnectWallet when needed
   const handleClick = () => {
@@ -108,7 +109,7 @@ const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address, m
         <div className='md:flex md:flex-row md:space-x-10 w-full'>
           <div className="text-white flex flex-row">
             <img
-              src={Person}
+              src={image}
               alt="Individual"
               className="w-36 h-36 rounded-lg"
             />
