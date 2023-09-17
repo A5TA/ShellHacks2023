@@ -33,6 +33,7 @@ const Individuals = () => {
             description={user.description}
             homeAddress={user.homeAddress}
             name={user.name}
+            image={user.url}
           />
           
         </div>

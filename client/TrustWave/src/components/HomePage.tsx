@@ -68,6 +68,7 @@ const HomePage = () => {
             description={userDataDemo[0].description}
             homeAddress={userDataDemo[0].homeAddress}
             name={userDataDemo[0].name}
+            image={userDataDemo[0].url}
           /></div> 
        <div><Individual
             handleConnectWallet={undefined}
@@ -76,6 +77,7 @@ const HomePage = () => {
             description={userDataDemo[1].description}
             homeAddress={userDataDemo[1].homeAddress}
             name={userDataDemo[1].name}
+            image={userDataDemo[1].url}
           /></div> 
           <div><Individual
             handleConnectWallet={undefined}
@@ -84,6 +86,7 @@ const HomePage = () => {
             description={userDataDemo[2].description}
             homeAddress={userDataDemo[2].homeAddress}
             name={userDataDemo[2].name}
+            image={userDataDemo[2].url}
           /></div> 
       </div>
     </div>
