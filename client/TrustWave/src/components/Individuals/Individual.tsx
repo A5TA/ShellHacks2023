@@ -28,6 +28,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 const TextShortener: React.FC<{ text: string; maxWords: number }> = ({ text, maxWords }) => {
+  if (!text) {console.log(text)}
   const words = text.split(' ');
   const [showAll, setShowAll] = useState(false);
   const displayText = showAll ? text : words.slice(0, maxWords).join(' ');
@@ -143,15 +144,17 @@ const Individual: React.FC<IndividualProps> = ({ handleConnectWallet, address, m
         </ExpandMore>
         </div> 
       <div>
-        {currentAccount ? 
-      <button aria-label="share" onClick={() => handleClick()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        {
+          handleConnectWallet != undefined && (currentAccount ? 
+      <button aria-label="share" onClick={() => {handleConnectWallet ? handleClick(): console.log("nah")}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
           Send Donation
       </button>
       :
-      <button aria-label="share" onClick={() => handleConnect()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      <button aria-label="share" onClick={() => {handleConnectWallet ? handleConnect(): console.log("nah")}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
             Connect Wallet
-      </button>
+      </button>)       
       }
+       
       </div>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
